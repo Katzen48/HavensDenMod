@@ -14,6 +14,6 @@ public class HavensDenUtilities
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
-    	System.out.println("Mod loaded");
+    	
     }
 }
