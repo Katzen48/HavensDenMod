@@ -1,6 +1,6 @@
 [
 {
-  "modid": "havensden",
+  "modid": "${modid}",
   "name": "Havens Den Utilities",
   "description": "Utilities for Havens Den Server",
   "version": "${version}",
