@@ -1,14 +1,14 @@
 [
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
+  "modid": "havensden",
+  "name": "Havens Den Utilities",
+  "description": "Utilities for Havens Den Server",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
-  "authorList": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
+  "authorList": ["Katzen48", "TheOhana"],
+  "credits": "",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
