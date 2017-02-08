@@ -1,10 +1,10 @@
 [
 {
-  "modid": "${modid}",
+  "modid": "havensden",
   "name": "Havens Den Utilities",
   "description": "Utilities for Havens Den Server",
-  "version": "${version}",
-  "mcversion": "${mcversion}",
+  "version": "0.1",
+  "mcversion": "1.11",
   "url": "",
   "updateUrl": "",
   "authorList": ["Katzen48", "TheOhana"],
