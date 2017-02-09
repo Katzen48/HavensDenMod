@@ -16,7 +16,7 @@ public class Blocks
 	{
 		baseblock.setRegistryName("testblock").setCreativeTab(HavensDenUtilities.instance.creativetab);
 		GameRegistry.register(baseblock);
-		genericblock.setRegistryName("generic").setCreativeTab(HavensDenUtilities.instance.creativetab);
+		genericblock.setRegistryName("genericblock").setCreativeTab(HavensDenUtilities.instance.creativetab);
 		GameRegistry.register(genericblock);
 	}
 }
