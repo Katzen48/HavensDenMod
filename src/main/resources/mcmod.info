@@ -3,7 +3,7 @@
   "modid": "havensden",
   "name": "Havens Den Utilities",
   "description": "Utilities for Havens Den Server",
-  "version": "0.1",
+  "version": "${version}",
   "mcversion": "1.11",
   "url": "",
   "updateUrl": "",
