@@ -18,6 +18,8 @@ public class ModelManager
 	{
 		registerModel(Blocks.baseblock);
 		registerModel(Items.baseblock_item);
+		registerModel(Blocks.genericblock);
+		registerModel(Items.genericblock_item);
 	}
 	
 	public static void registerModel(Item lItem)
