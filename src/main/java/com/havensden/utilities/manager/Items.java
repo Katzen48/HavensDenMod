@@ -14,7 +14,7 @@ public class Items
 	{
 		baseblock_item.setUnlocalizedName(Blocks.baseblock.getUnlocalizedName()).setRegistryName("testblock_item");
 		GameRegistry.register(baseblock_item);
-		genreicblock_item.setUnlocalizedName(Blocks.genericblock.getUnlocalizedName()).setRegistryName("genericblock_item");
+		genericblock_item.setUnlocalizedName(Blocks.genericblock.getUnlocalizedName()).setRegistryName("genericblock_item");
 		GameRegistry.register(genericblock_item);
 	}
 }
