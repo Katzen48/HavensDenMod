@@ -1,6 +1,7 @@
 package com.havensden.utilities;
 
 import com.havensden.utilities.inventory.HavensDenTab;
+import com.havensden.utilities.manager.CommandFactory;
 import com.havensden.utilities.proxy.CommonProxy;
 
 import net.minecraftforge.fml.common.Mod;
@@ -10,6 +11,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 
 @Mod(modid = HavensDenUtilities.MODID, name = HavensDenUtilities.MODNAME, version = HavensDenUtilities.VERSION)
 public class HavensDenUtilities
@@ -40,5 +42,11 @@ public class HavensDenUtilities
     @EventHandler
     public void postInit(FMLPostInitializationEvent pEvent) {
         this.proxy.postInit(pEvent);
+    }
+    
+    @EventHandler
+    public void serverStart(FMLServerStartingEvent pEvent)
+    {
+    	CommandFactory.registerCommands(pEvent);
     }
 }
