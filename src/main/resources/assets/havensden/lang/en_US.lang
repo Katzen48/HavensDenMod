@@ -1,3 +1,4 @@
 tile.TestBlock.name=TestBlock
 itemGroup.Havens Den Utilities=Havens Den Utilities
 tile.GenericBlock.name=GenericBlock
+tile.CautionBlock.name=CautionBlock
