@@ -20,6 +20,8 @@ public class ModelManager
 		registerModel(Items.baseblock_item);
 		registerModel(Blocks.genericblock);
 		registerModel(Items.genericblock_item);
+		registerModel(Blocks.cautiontopblock);
+		registerModel(Items.cautiontopblock_item);
 	}
 	
 	public static void registerModel(Item lItem)
