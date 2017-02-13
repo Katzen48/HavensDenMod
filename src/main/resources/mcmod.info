@@ -1,7 +1,7 @@
 [
 {
-  "modid": "havensden",
-  "name": "Havens Den Utilities",
+  "modid": "${modid}",
+  "name": "${name}",
   "description": "Utilities for Havens Den Server",
   "version": "${version}",
   "mcversion": "1.11",

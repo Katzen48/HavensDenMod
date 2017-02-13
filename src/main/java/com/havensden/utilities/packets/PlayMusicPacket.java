@@ -3,9 +3,12 @@ package com.havensden.utilities.packets;
 import java.lang.reflect.Field;
 
 import com.havensden.utilities.HavensDenUtilities;
+import com.havensden.utilities.sounds.Music;
+import com.havensden.utilities.sounds.SoundFactory;
 
 import io.netty.buffer.ByteBuf;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.audio.ISound;
 import net.minecraft.client.audio.ISound.AttenuationType;
 import net.minecraft.client.audio.PositionedSound;
 import net.minecraft.client.audio.PositionedSoundRecord;
@@ -54,20 +57,15 @@ public class PlayMusicPacket implements IMessage
 		{		
 			if(pMessage.musicFileName != null)
 			{
-				SoundEvent lSoundEvent;
-				ResourceLocation lLocation = new ResourceLocation(HavensDenUtilities.MODID + ":" + pMessage.musicFileName);
-				
-				
-				if((lSoundEvent = SoundEvent.REGISTRY.getObject(lLocation)) != null)
-				{					
-					if(pMessage.loop)
-					{
-						pPlayer.playSound(lSoundEvent, 100, 1F);
-					}
-					else
-					{
-						pPlayer.playSound(lSoundEvent, 100, 1F);
-					}
+				Music lMusic = SoundFactory.getMusic(pMessage.musicFileName);
+					
+				if(lMusic != null)
+				{
+					lMusic.setPlayer(Minecraft.getMinecraft().player);
+					
+					lMusic.setRepeat(pMessage.loop);
+					
+					Minecraft.getMinecraft().getSoundHandler().playSound(lMusic);
 				}
 			}
 			

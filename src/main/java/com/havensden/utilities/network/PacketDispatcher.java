@@ -3,6 +3,7 @@ package com.havensden.utilities.network;
 import com.havensden.utilities.HavensDenUtilities;
 import com.havensden.utilities.packets.AbstractBiMessageHandler;
 import com.havensden.utilities.packets.PlayMusicPacket;
+import com.havensden.utilities.packets.StopMusicPacket;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -24,6 +25,7 @@ public class PacketDispatcher
 		if(FMLCommonHandler.instance().getSide()==Side.CLIENT)
 		{
 			registerMessage(PlayMusicPacket.Handler.class, PlayMusicPacket.class, (byte) 0, Side.CLIENT);
+			registerMessage(StopMusicPacket.Handler.class, StopMusicPacket.class, (byte) 1, Side.CLIENT);
 		}
 		
 	}

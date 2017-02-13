@@ -1,6 +1,8 @@
 package com.havensden.utilities.packets;
 
 import com.havensden.utilities.HavensDenUtilities;
+import com.havensden.utilities.sounds.Music;
+import com.havensden.utilities.sounds.SoundFactory;
 
 import io.netty.buffer.ByteBuf;
 import net.minecraft.client.Minecraft;
@@ -16,7 +18,6 @@ import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 public class StopMusicPacket implements IMessage
 {
 	private String musicFileName;
-	private boolean loop;
 
 	public StopMusicPacket() {}
 	
@@ -27,8 +28,8 @@ public class StopMusicPacket implements IMessage
 	
 	@Override
 	public void fromBytes(ByteBuf pBuf) 
-	{
-		this.musicFileName = ByteBufUtils.readUTF8String(pBuf).toLowerCase();
+	{ 
+		this.musicFileName = ByteBufUtils.readUTF8String(pBuf);
 	}
 
 	@Override
@@ -45,11 +46,20 @@ public class StopMusicPacket implements IMessage
 		{
 			if(!pMessage.musicFileName.equals("null"))
 			{
-				SoundEvent lSoundEvent;
-				ResourceLocation lLocation = new ResourceLocation(HavensDenUtilities.MODID + ":" + pMessage.musicFileName);
+				Music lMusic = SoundFactory.getMusic(pMessage.musicFileName);
 				
-				if((lSoundEvent = SoundEvent.REGISTRY.getObject(lLocation)) != null){
-					Minecraft.getMinecraft().getSoundHandler().stopSound(PositionedSoundRecord.getMusicRecord(lSoundEvent));
+				if(lMusic != null)
+				{
+					Minecraft.getMinecraft().getSoundHandler().stopSound(lMusic);
+				}	
+			}
+			else
+			{
+				Music[] lMusics = SoundFactory.getMusics();
+				
+				for(Music lMusic : lMusics)
+				{
+					Minecraft.getMinecraft().getSoundHandler().stopSound(lMusic);
 				}
 			}
 			

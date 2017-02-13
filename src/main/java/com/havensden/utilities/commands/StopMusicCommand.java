@@ -23,7 +23,7 @@ public class StopMusicCommand extends CommandBase
 	@Override
 	public String getUsage(ICommandSender pSender) 
 	{
-		return "/stopmusic <player> <filename>";
+		return "/stopmusic <player> (filename)";
 	}
 	
 
@@ -36,15 +36,20 @@ public class StopMusicCommand extends CommandBase
 	@Override
 	public void execute(MinecraftServer pServer, ICommandSender pSender, String[] pArgs) throws CommandException 
 	{
-		if(pArgs.length > 1)
+		if(pArgs.length >= 1)
 		{
 			EntityPlayerMP lPlayer = pServer.getPlayerList().getPlayerByUsername(pArgs[0]);
 			
 			if(lPlayer != null)
-			{
-				String lMusicFileName = pArgs[1];
-				
-				PacketDispatcher.sendTo(new StopMusicPacket(lMusicFileName), lPlayer);
+			{	
+				if(pArgs.length < 2)
+				{
+					PacketDispatcher.sendTo(new StopMusicPacket("null"), lPlayer);
+				}
+				else
+				{
+					PacketDispatcher.sendTo(new StopMusicPacket(pArgs[1]), lPlayer);
+				}
 			}
 		}
 		else
