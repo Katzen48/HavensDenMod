@@ -18,7 +18,7 @@ public class HavensDenUtilities
 {
     public static final String MODID = "havensden";
     public static final String MODNAME = "Havens Den Utilities";
-    public static final String VERSION = "0.1";
+    public static final String VERSION = "0.1.1-A";
     
     public HavensDenTab creativetab;
     
@@ -29,18 +29,21 @@ public class HavensDenUtilities
     public static CommonProxy proxy;
     
     @EventHandler
-    public void preInit(FMLPreInitializationEvent pEvent) {
+    public void preInit(FMLPreInitializationEvent pEvent) 
+    {
         this.creativetab = new HavensDenTab();
     	this.proxy.preInit(pEvent);
     }
 
     @EventHandler
-    public void init(FMLInitializationEvent pEvent) {
+    public void init(FMLInitializationEvent pEvent)
+    {
         this.proxy.init(pEvent);
     }
 
     @EventHandler
-    public void postInit(FMLPostInitializationEvent pEvent) {
+    public void postInit(FMLPostInitializationEvent pEvent) 
+    {
         this.proxy.postInit(pEvent);
     }
     

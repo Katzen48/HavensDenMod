@@ -1,8 +1,26 @@
 {
-"striptease": 
+"wolfswacht_theme": 
 	{
-    "category": "master",
-    "subtitle": "havensden.subtitle.striptease",
-    "sounds": [ "havensden:striptease" ]
+    "category": "voice",
+    "subtitle": "havensden.subtitle.wolfswacht",
+    "sounds": 
+		[
+			{
+			"name": "havensden:fiddlesmcginty",
+			"stream": true
+			}
+		]
+	},
+"unterstadt_theme": 
+	{
+    "category": "voice",
+    "subtitle": "havensden.subtitle.unterstadt",
+    "sounds": 
+		[
+			{
+			"name": "havensden:finalbattleofthedarkwizards",
+			"stream": true
+			}
+		]
 	}
 }
