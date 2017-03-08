@@ -1,10 +1,12 @@
 package com.havensden.utilities.proxy;
 
+import com.havensden.utilities.events.ClientEvents;
 import com.havensden.utilities.manager.ModelManager;
 import com.havensden.utilities.sounds.SoundFactory;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -24,6 +26,8 @@ public class ClientProxy extends CommonProxy
 	{
 		super.init(pEvent);
 		ModelManager.registerModels();
+		SoundFactory.init();
+		MinecraftForge.EVENT_BUS.register(new ClientEvents());
 	}
 
 	@Override

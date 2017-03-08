@@ -35,16 +35,16 @@ public class StopMusicCommand extends CommandBase
 
 	@Override
 	public void execute(MinecraftServer pServer, ICommandSender pSender, String[] pArgs) throws CommandException 
-	{
+	{		
 		if(pArgs.length >= 1)
 		{
 			EntityPlayerMP lPlayer = pServer.getPlayerList().getPlayerByUsername(pArgs[0]);
 			
 			if(lPlayer != null)
-			{	
+			{			
 				if(pArgs.length < 2)
-				{
-					PacketDispatcher.sendTo(new StopMusicPacket("null"), lPlayer);
+				{				
+					PacketDispatcher.sendTo(new StopMusicPacket("none"), lPlayer);
 				}
 				else
 				{

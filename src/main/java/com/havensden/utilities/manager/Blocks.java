@@ -3,6 +3,7 @@ package com.havensden.utilities.manager;
 import com.havensden.utilities.HavensDenUtilities;
 import com.havensden.utilities.blocks.BaseBlock;
 import com.havensden.utilities.blocks.CautionTopBlock;
+import com.havensden.utilities.blocks.GenericBlock;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
@@ -11,7 +12,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class Blocks 
 {	
 	public static Block baseblock = new BaseBlock("TestBlock");
-	public static Block genericblock = new BaseBlock("GenericBlock");
+	public static Block genericblock = new GenericBlock();
 	public static Block cautiontopblock = new CautionTopBlock();
 	
 	public static void createBlocks()

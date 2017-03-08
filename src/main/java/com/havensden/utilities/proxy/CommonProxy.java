@@ -20,7 +20,6 @@ public abstract class CommonProxy
 	public void init(FMLInitializationEvent pEvent)
 	{
 		PacketDispatcher.registerPackets();
-		SoundFactory.init();
 	}
 	
 	public void postInit(FMLPostInitializationEvent pEvent)
