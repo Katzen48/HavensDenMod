@@ -22,11 +22,11 @@ public class PacketDispatcher
 	//Enter packets to register here
 	public static final void registerPackets()
 	{
-		if(FMLCommonHandler.instance().getSide()==Side.CLIENT)
-		{
+		//*if(FMLCommonHandler.instance().getSide()==Side.CLIENT)
+	//*	{
 			registerMessage(PlayMusicPacket.Handler.class, PlayMusicPacket.class, (byte) 0, Side.CLIENT);
 			registerMessage(StopMusicPacket.Handler.class, StopMusicPacket.class, (byte) 1, Side.CLIENT);
-		}
+		//*}
 		
 	}
 	

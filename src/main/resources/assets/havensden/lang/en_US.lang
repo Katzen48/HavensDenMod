@@ -1,4 +1,4 @@
-tile.TestBlock.name=TestBlock
+tile.TestBlock.name=Test Block
 itemGroup.Havens Den Utilities=Havens Den Utilities
-tile.GenericBlock.name=GenericBlock
-tile.CautionTopBlock.name=CautionBlock
+tile.GenericBlock.name=Generic Block
+tile.CautionTopBlock.name=Caution Top Block
