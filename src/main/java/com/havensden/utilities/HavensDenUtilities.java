@@ -21,7 +21,7 @@ public class HavensDenUtilities
 {
     public static final String MODID = "havensden";
     public static final String MODNAME = "Havens Den Utilities";
-    public static final String VERSION = "0.1.2-A";
+    public static final String VERSION = "0.1.3-A";
     
     public HavensDenTab creativetab;
     
