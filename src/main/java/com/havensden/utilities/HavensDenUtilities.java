@@ -21,11 +21,10 @@ public class HavensDenUtilities
 {
     public static final String MODID = "havensden";
     public static final String MODNAME = "Havens Den Utilities";
-    public static final String VERSION = "0.1.3-A";
+    public static final String VERSION = "0.1.4-A";
     
     public HavensDenTab creativetab;
     
-    @SideOnly(Side.SERVER)
     public MoneyHandler moneyhandler;
     
     @Instance

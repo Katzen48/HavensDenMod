@@ -2,6 +2,10 @@ package com.havensden.utilities.network;
 
 import com.havensden.utilities.HavensDenUtilities;
 import com.havensden.utilities.packets.AbstractBiMessageHandler;
+import com.havensden.utilities.packets.AtmMoneyChangePacket;
+import com.havensden.utilities.packets.AtmRespondPacket;
+import com.havensden.utilities.packets.AtmSessionChangePacket;
+import com.havensden.utilities.packets.CreateBankAccountPacket;
 import com.havensden.utilities.packets.PlayMusicPacket;
 import com.havensden.utilities.packets.StopMusicPacket;
 
@@ -26,6 +30,10 @@ public class PacketDispatcher
 	//*	{
 			registerMessage(PlayMusicPacket.Handler.class, PlayMusicPacket.class, (byte) 0, Side.CLIENT);
 			registerMessage(StopMusicPacket.Handler.class, StopMusicPacket.class, (byte) 1, Side.CLIENT);
+			registerMessage(CreateBankAccountPacket.Handler.class, CreateBankAccountPacket.class, (byte) 2, Side.SERVER);
+			registerMessage(AtmSessionChangePacket.Handler.class, AtmSessionChangePacket.class, (byte) 3, Side.SERVER);
+			registerMessage(AtmRespondPacket.Handler.class, AtmRespondPacket.class, (byte) 4, Side.CLIENT);
+			registerMessage(AtmMoneyChangePacket.Handler.class, AtmMoneyChangePacket.class, (byte) 5, Side.SERVER);
 		//*}
 		
 	}

@@ -11,7 +11,7 @@ apply plugin: 'net.minecraftforge.gradle.forge'
 //Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 
 
-version = "0.1.3-A"
+version = "0.1.4-A"
 group = "com.havensden.utilities" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "havensden"
 
@@ -54,6 +54,8 @@ dependencies {
     // for more info...
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
+	
+	runtime fileTree(dir: 'libs', include: '*.jar')
 
 }
 
