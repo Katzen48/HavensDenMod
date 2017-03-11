@@ -1,5 +1,6 @@
 package com.havensden.utilities.manager;
 
+import com.havensden.utilities.commands.BankAccountCommand;
 import com.havensden.utilities.commands.PlayMusicCommand;
 import com.havensden.utilities.commands.StopMusicCommand;
 
@@ -11,5 +12,6 @@ public class CommandFactory
 	{
 		pEvent.registerServerCommand(new PlayMusicCommand());
 		pEvent.registerServerCommand(new StopMusicCommand());
+		pEvent.registerServerCommand(new BankAccountCommand());
 	}
 }

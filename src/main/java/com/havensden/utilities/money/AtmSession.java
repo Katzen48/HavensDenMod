@@ -8,7 +8,12 @@ public class AtmSession
 {
 	private UUID uuid = null;
 	
-	protected AtmSession() {}
+	private String sessionid = null;
+	
+	protected AtmSession(String pSessionsId) 
+	{
+		this.sessionid = pSessionsId;
+	}
 	
 	public boolean login(UUID pUUID, String pPin)
 	{
@@ -28,8 +33,6 @@ public class AtmSession
 		{
 			if(BankSystem.transferToBank(uuid, pAmount))
 			{
-				HavensDenUtilities.instance.moneyhandler.removeMoney(uuid, pAmount);
-				
 				return true;
 			}
 			else
@@ -47,8 +50,6 @@ public class AtmSession
 		{
 			if(BankSystem.transferFromBank(uuid, pAmount))
 			{
-				HavensDenUtilities.instance.moneyhandler.addMoney(uuid, pAmount);
-				
 				return true;
 			}
 			else
@@ -67,6 +68,16 @@ public class AtmSession
 	
 	public boolean createAccount(UUID pOwner, String pPin)
 	{
-		return createAccount(0, pOwner, pPin, false);
+		return createAccount(0, pOwner, pPin, true);
+	}
+	
+	public String getSessionID()
+	{
+		return sessionid;
+	}
+	
+	public boolean hasAccount(UUID pUUID)
+	{
+		return BankSystem.hasAccount(pUUID);
 	}
 }

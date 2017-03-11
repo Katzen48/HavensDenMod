@@ -1,12 +1,15 @@
 package com.havensden.utilities.money;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.UUID;
 
 import com.havensden.utilities.HavensDenUtilities;
 
 public class BankSystem 
 {
+	private static HashMap<String, AtmSession> atmsessions = new HashMap<String, AtmSession>();
+	
 	private static ArrayList<BankAccount> bankaccounts = new ArrayList<BankAccount>();
 	
 	protected BankSystem() {}
@@ -42,7 +45,7 @@ public class BankSystem
 	{
 		for(BankAccount lAccount : bankaccounts)
 		{
-			if(lAccount.equals(pUUID))
+			if(lAccount.getOwner().equals(pUUID))
 			{
 				return lAccount;
 			}
@@ -121,8 +124,24 @@ public class BankSystem
 		}
 	}
 	
-	public static AtmSession getSession()
+	public static String createSession()
 	{
-		return new AtmSession();
+		UUID lSessionId = UUID.randomUUID();
+		
+		AtmSession lSession = new AtmSession(lSessionId.toString());
+		
+		atmsessions.put(lSessionId.toString(), lSession);
+		
+		return lSession.getSessionID();
+	}
+	
+	public static AtmSession getSession(String pSessionId)
+	{
+		return atmsessions.get(pSessionId);
+	}
+	
+	public static void removeSession(String pSessionId)
+	{
+		atmsessions.remove(pSessionId);
 	}
 }
