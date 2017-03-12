@@ -2,6 +2,8 @@ package com.havensden.utilities.money;
 
 import java.util.UUID;
 
+import com.havensden.utilities.HavensDenUtilities;
+
 public class BankAccount 
 {
 	private long balance;
@@ -19,7 +21,7 @@ public class BankAccount
 	
 	protected BankAccount(UUID pOwner, String pPin)
 	{
-		this(0L, pOwner, pPin, false);
+		this(0L, pOwner, pPin, true);
 	}
 
 	public long getBalance() 
@@ -30,6 +32,8 @@ public class BankAccount
 	public void setBalance(long balance) 
 	{
 		this.balance = balance;
+		
+		HavensDenUtilities.instance.dbconnection.setBalance(owner.toString(), balance);
 	}
 
 	public UUID getOwner() 

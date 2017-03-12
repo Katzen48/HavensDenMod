@@ -5,13 +5,17 @@ buildscript {
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
+		classpath 'mysql:mysql-connector-java:6.0.6'
+		classpath 'eu.appsatori:gradle-fatjar-plugin:0.3'
     }
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
 //Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 
+apply plugin: 'eu.appsatori.fatjar'
 
-version = "0.1.4-A"
+
+version = "0.1.6-A"
 group = "com.havensden.utilities" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "havensden"
 
@@ -55,8 +59,9 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 	
-	runtime fileTree(dir: 'libs', include: '*.jar')
+	compile fileTree(dir: 'libs', include: '*.jar')
 
+	runtime fileTree(dir: 'C:/Users/Startrekfreak/Downloads/mysql-connector-java-6.0.6/src/main/java')
 }
 
 processResources {
@@ -76,4 +81,14 @@ processResources {
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
     }
+}
+
+jar {
+	into('') {
+		from 'C:/Users/Startrekfreak/Downloads/mysql-connector-java-6.0.6/src/main/java'
+	}
+}
+
+fatJarPrepareFiles {
+  exclude 'enderpay-1.11.2-0.0.2.jar'
 }

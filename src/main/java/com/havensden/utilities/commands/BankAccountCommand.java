@@ -44,10 +44,8 @@ public class BankAccountCommand extends CommandBase
 					
 					String lSessionid = BankSystem.createSession();
 					
-					if(!BankSystem.getSession(lSessionid).hasAccount(lPlayer.getUniqueID()))
-					{
-						BankSystem.getSession(lSessionid).createAccount(lPlayer.getUniqueID(), pArgs[1]);
-						
+					if(BankSystem.getSession(lSessionid).createAccount(lPlayer.getUniqueID(), pArgs[1]))
+					{						
 						pSender.sendMessage(new TextComponentString("Your Bankaccount has beed created. Please remember your password."));
 					}
 					else
