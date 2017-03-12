@@ -22,6 +22,8 @@ public class BankSystem
 			
 			bankaccounts.add(lAccount);
 			
+			HavensDenUtilities.instance.dbconnection.createBankaccount(pOwner.toString(), pPin);
+			
 			return true;
 		}
 		else
@@ -143,5 +145,10 @@ public class BankSystem
 	public static void removeSession(String pSessionId)
 	{
 		atmsessions.remove(pSessionId);
+	}
+	
+	public static void loadAccounts()
+	{
+		HavensDenUtilities.instance.dbconnection.getAllBankaccounts();
 	}
 }
