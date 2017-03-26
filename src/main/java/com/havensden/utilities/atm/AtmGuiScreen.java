@@ -18,6 +18,7 @@ import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.GuiTextField;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.text.TextComponentString;
 
 public class AtmGuiScreen extends GuiScreen
 {	
@@ -102,7 +103,9 @@ public class AtmGuiScreen extends GuiScreen
 				}
 				else
 				{
-					setFieldText("Can not login");
+					this.mc.player.sendMessage(new TextComponentString("Can't login"));
+					
+					logout();
 				}
 				
 				GuiUtils.setAtmRespondPacket(null);
