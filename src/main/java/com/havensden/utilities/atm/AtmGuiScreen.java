@@ -390,7 +390,7 @@ public class AtmGuiScreen extends GuiScreen
 					{
 						PacketDispatcher.sendToServer(new AtmSessionChangePacket(atmsessionid, (byte) 2, input));
 						
-						this.state = 3;
+						this.state = 4;
 						
 						this.input = "";
 						

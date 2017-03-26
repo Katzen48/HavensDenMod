@@ -1,0 +1,9 @@
+{
+	"variants": {
+		"normal": { "model": "havensden:atmblock"},
+		"facing=north": { "model": "havensden:atmblock"},
+        "facing=south": { "model": "havensden:atmblock", "y": 180, "uvlock": false },
+        "facing=east": { "model": "havensden:atmblock", "y": 90, "uvlock": false },
+        "facing=west": { "model": "havensden:atmblock", "y": 270, "uvlock": false }
+	}
+}

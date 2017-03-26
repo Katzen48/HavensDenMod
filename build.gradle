@@ -15,7 +15,7 @@ apply plugin: 'net.minecraftforge.gradle.forge'
 apply plugin: 'eu.appsatori.fatjar'
 
 
-version = "0.1.6-A"
+version = "0.1.7-A"
 group = "com.havensden.utilities" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "havensden"
 
@@ -85,7 +85,7 @@ processResources {
 
 jar {
 	into('') {
-		from 'C:/Users/Startrekfreak/Downloads/mysql-connector-java-6.0.6/src/main/java'
+		from 'C:/Users/Startrekfreak/Downloads/mysql-connector-java-6.0.6/mysql-connector-java-6.0.6-bin'
 	}
 }
 

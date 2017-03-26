@@ -10,6 +10,7 @@ public class Items
 	public static ItemBlock baseblock_item = new ItemBlock(Blocks.baseblock);
 	public static ItemBlock genericblock_item = new ItemBlock(Blocks.genericblock);
 	public static ItemBlock cautiontopblock_item = new ItemBlock(Blocks.cautiontopblock);
+	public static ItemBlock atmblock_item = new ItemBlock(Blocks.atmblock);
 	
 	public static void createItems()
 	{
@@ -19,5 +20,7 @@ public class Items
 		GameRegistry.register(genericblock_item);
 		cautiontopblock_item.setUnlocalizedName(Blocks.cautiontopblock.getUnlocalizedName()).setRegistryName("cautiontopblock_item");
 		GameRegistry.register(cautiontopblock_item);
+		atmblock_item.setUnlocalizedName(Blocks.atmblock.getUnlocalizedName()).setRegistryName("atmblock_item");
+		GameRegistry.register(atmblock_item);
 	}
 }
