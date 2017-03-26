@@ -22,6 +22,8 @@ public class ModelManager
 		registerModel(Items.genericblock_item);
 		registerModel(Blocks.cautiontopblock);
 		registerModel(Items.cautiontopblock_item);
+		registerModel(Blocks.atmblock);
+		registerModel(Items.atmblock_item);
 	}
 	
 	public static void registerModel(Item lItem)

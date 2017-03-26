@@ -49,7 +49,7 @@ public class MySqlConnection extends DatabaseConnection
 			System.out.println("[Havens Den] Connecting to Database");
 						
 			connection = DriverManager.getConnection("jdbc:mysql://" + mysqlhost + "/" + mysqldatabase
-					+ "?user=" + mysqluser + "&password=" + mysqlpassword);
+					+ "?user=" + mysqluser + "&password=" + mysqlpassword + "&autoreconnect=true");
 			
 			System.out.println("[Havens Den] Connected to Database");
 		} 
